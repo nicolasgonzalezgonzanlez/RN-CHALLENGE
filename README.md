@@ -2,6 +2,8 @@
 
 ### Challenge REACT NATIVE
 
+![Screenshot](https://github.com/nicolasgonzalezgonzanlez/RN-CHALLENGE/blob/master/Screenshot.png?raw=true)
+
 ### Core
 
 ```
