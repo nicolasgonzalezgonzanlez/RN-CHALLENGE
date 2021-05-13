@@ -1,20 +1,26 @@
-import React, { useEffect } from 'react';
-import { Text, View, ImageBackground, StyleSheet, Image } from 'react-native';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { ScrollView } from 'react-native-gesture-handler';
+import { Text, View, Image } from 'react-native';
+import placeholder from '@assets/img_book_placeholder.png';
+import styles from './styles';
 
-function Book({ route }) {
-  // TODO: Complete
-
-  useEffect(() => {
-    // TODO: Complete
-    console.log('hola soy la nueva navegacion');
-    console.log(route);
-  }, []);
+function Book() {
+  const { book } = useSelector(store => store.book);
 
   return (
-    // TODO: Make a list of BookItems
-    <View>
-      <Text>HOla soy el {route.params.title} </Text>
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Image
+          source={book.imageUrl ? { uri: book.imageUrl } : placeholder}
+          style={styles.image}
+        />
+        <View style={styles.containerTexts}>
+          <Text style={styles.title}>{book.title} </Text>
+          <Text style={styles.subtitle}>{book.author}</Text>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 

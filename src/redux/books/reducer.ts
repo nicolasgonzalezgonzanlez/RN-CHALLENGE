@@ -4,7 +4,8 @@ import { ReduxAction } from '@interfaces/redux';
 import { actions } from './actions';
 
 const initialState = {
-  books: []
+  books: [],
+  book: {}
 };
 
 const reducer = (state = initialState, action: ReduxAction) => {
@@ -13,6 +14,11 @@ const reducer = (state = initialState, action: ReduxAction) => {
       return {
         ...state,
         books: action.payload
+      };
+    case actions.SET_BOOK:
+      return {
+        ...state,
+        book: action.payload
       };
     default:
       return state;
