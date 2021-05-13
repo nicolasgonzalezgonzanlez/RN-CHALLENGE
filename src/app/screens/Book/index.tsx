@@ -6,7 +6,7 @@ import placeholder from '@assets/img_book_placeholder.png';
 import styles from './styles';
 
 function Book() {
-  const { book } = useSelector(store => store.book);
+  const { book } = useSelector((store: any) => store.book);
 
   return (
     <ScrollView>

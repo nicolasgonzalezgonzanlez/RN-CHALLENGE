@@ -1,4 +1,9 @@
 export interface Book {
-  [books: number]: object;
+  title: string;
+  imageUrl?: string;
+  author: string;
+  id: number;
+  genre: string;
+  publisher: string;
+  year: string;
 }
-export interface LibraryI {}

@@ -2,10 +2,18 @@
 import { ReduxAction } from '@interfaces/redux';
 
 import { actions } from './actions';
-
-const initialState = {
+import { State } from '@interfaces/state';
+const initialState: State = {
   books: [],
-  book: {}
+  book: {
+    id: 0,
+    author: '',
+    title: '',
+    imageUrl: '',
+    genre: '',
+    publisher: '',
+    year: ''
+  }
 };
 
 const reducer = (state = initialState, action: ReduxAction) => {

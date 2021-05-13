@@ -3,22 +3,15 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import placeholder from '@assets/img_book_placeholder.png';
 import { actionCreators } from '@redux/books/actions';
-
-// import { Book } from '@interfaces/book';
-
 import styles from './styles';
 import { useDispatch } from 'react-redux';
+import { Book } from '@interfaces/book';
 
-interface BookI {
-  data: {
-    title: string;
-    imageUrl?: string;
-    author: string;
-    id: boolean;
-  };
+interface Props {
+  data: Book;
 }
 
-function BookItem({ data }: BookI) {
+function BookItem({ data }: Props) {
   const navigation = useNavigation();
 
   const dispatch = useDispatch();

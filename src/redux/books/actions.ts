@@ -1,5 +1,3 @@
-import BookService from '@services/BookService';
-
 export const actions = {
   // TODO: Complete redux book actions
   CALL_ALL_BOOK: 'CALL_ALL_BOOK',
