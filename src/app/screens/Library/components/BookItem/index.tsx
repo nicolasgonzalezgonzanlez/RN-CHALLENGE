@@ -10,7 +10,6 @@ import styles from './styles';
 import { useDispatch } from 'react-redux';
 
 interface BookI {
-  // TODO: Complete
   data: {
     title: string;
     imageUrl?: string;

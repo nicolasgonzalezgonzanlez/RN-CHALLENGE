@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { apiGetBook } from '@redux/books/thunks';
-import { actionCreators } from '@redux/books/actions';
 import { ScrollView } from 'react-native-gesture-handler';
 
-//import { Book } from '@interfaces/book';
-
+import { LibraryI } from '@interfaces/book';
+//components
 import BookItem from './components/BookItem';
-// import styles from './styles';
 
 function Library() {
-  // TODO: Complete
-
   const { books } = useSelector(state => state.book);
 
   const dispatch = useDispatch();
@@ -25,7 +21,6 @@ function Library() {
   }, []);
 
   return (
-    // TODO: Make a list of BookItems
     <ScrollView>
       {books && books.length > 0 ? (
         <>
