@@ -3,7 +3,6 @@ import Api from '@services/BookService';
 export const apiGetBook = () => async dispatch => {
   try {
     const response = await Api.getBooks();
-    console.log(response);
     if (response.ok) {
       dispatch({
         type: actions.CALL_ALL_BOOK,
