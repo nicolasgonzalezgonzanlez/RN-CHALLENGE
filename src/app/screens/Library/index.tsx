@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-import { Text } from 'react-native';
+import { Text, FlatList, SafeAreaView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { apiGetBook } from '@redux/books/thunks';
-import { ScrollView } from 'react-native-gesture-handler';
 
 //components
 import BookItem from './components/BookItem';
-import { Book } from '@interfaces/book';
 
 function Library() {
   const { books } = useSelector((state: any) => state.book);
@@ -18,17 +16,17 @@ function Library() {
   }, []);
 
   return (
-    <ScrollView>
+    <SafeAreaView>
       {books && books.length > 0 ? (
-        <>
-          {books.map((book: Book) => {
-            return <BookItem data={book} key={book.id} />;
-          })}
-        </>
+        <FlatList
+          data={books}
+          renderItem={({ item }) => <BookItem data={item} key={item.id} />}
+          keyExtractor={item => item.id.toString()}
+        />
       ) : (
-        <Text>Aun no hay datos</Text>
+        <Text>Aun no hay data</Text>
       )}
-    </ScrollView>
+    </SafeAreaView>
   );
 }
 
